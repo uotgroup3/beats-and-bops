@@ -8,4 +8,6 @@
 
 **Description**: A music visualizer that syncs with music that is requested by the user and streamed from a server that contains the music (i.e. Spotify).
 
+**Logo**: Colorful Sound Waves Music App Logo.png![image](https://user-images.githubusercontent.com/84821822/119944834-c358a980-bf62-11eb-9f80-1b8c4d22b045.png)
+
 **Screenshots**:
