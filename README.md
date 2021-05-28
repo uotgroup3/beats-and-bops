@@ -2,6 +2,8 @@
 
 **Date Created**: May 25th, 2021
 
+**Group #**: 3
+
 **Created By**: Lisa Le, Shannon Nell, Harmony Hood, Said Hadad, and Jaspreet Khela
 
 **Description**: A music visualizer that syncs with music that is requested by the user and streamed from a server that contains the music (i.e. Spotify).
