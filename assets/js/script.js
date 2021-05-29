@@ -1,40 +1,13 @@
-// //Variables
-// var searchCont = document.querySelector('#search-container');
-// var searchForm = document.querySelector('.test');
-// var searchInfo = document.querySelector('.search-box');
-
-// //form entry submitted
-// function formSubmit(event) {
-//     event.preventDefault();
-
-//     //song and artist inputs
-//     var track = searchInfo.value.trim();
-//     console.log(track);
-//     //clear song input
-//     // songInput.textContent = '';
-
-//     // if(song) {
-//     //     getSong(song);
-//     // } 
-//     // else {
-//     //     alert('Please enter a song and artist!');
-//     // }
-//     // searchSong(track);
-//     getSong();
-// }
-
-
-
-// //Listen for song click & artist click
-// searchForm.addEventListener('click', formSubmit);
-
-
-////////////////////////////////////////////
+//variables
+var songName = document.querySelector('#song-name');
+var artistName = document.querySelector('#artist-name');
+var albumCover = document.querySelector('#album-cover');
 
 //search button clicked
 $('.search-icon').click(function() {
     //get value of search box
     var searchInfo = $('.search-box').val();
+    //accessToken will need to be created as this one expires see below apiController for potential solution
     var accessToken = 'BQAsCGeyIo2EzosC6cndaj95U_mVZXUJpmypwteWpeZ9qJF1nt36u3BZdsWkoTnI_O3lbksoSHlT5Uy2I_QSRbeh_837kkxJtbTrFzTKN6imTLrCYQMjS5EnPUY_klQFOCJZNZiDv8SwGoWjavSCgBxtCOJ71g6ym1g';
     
     //Make spotify API call using track endpoint
@@ -44,13 +17,32 @@ $('.search-icon').click(function() {
         headers: {
             'Authorization' : 'Bearer ' + accessToken
         },
+        //if call was successful, show data
         success: function(data) {
             //load songs from Spotify onto page
             console.log(data);
+            //load songs from Spotify
+            loadSong(data);
         }
     })
 })
 
+//trackInfo is data from search button click
+function loadSong(trackInfo) {
+    // var searchInfo = $('.search-box').val();
+    //Album cover img
+    albumCover.setAttribute('src', trackInfo.tracks.items[0].album.images[0].url)
+    //Song name
+    var song = trackInfo.tracks.items[0].name;
+        songName.textContent = song;
+        console.log(song);
+
+    //Artist name
+    var artist = trackInfo.tracks.items[0].artists[0].name;
+        artistName.textContent = artist;
+        console.log(artist);
+    
+}
 
 
 
