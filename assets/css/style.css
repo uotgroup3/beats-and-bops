@@ -1,1 +1,110 @@
 /* Beats and Bops Style Sheet */
+/* Accept suggestions for the font */
+html {
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(58,58,58)
+}
+/* The content will cover the whole page (10vh for the margins) */
+body {
+    height: 90vh;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 5vh;
+    height: 90vh;
+    position: relative;
+}
+p,h1,h2 {
+    color: white;
+}
+/* Here we give format to the info container which includes the logo,
+song description/project description1 */
+#info {
+    display: inline-block;
+}
+#logo {
+    width: 200px;
+}
+#song-description {
+    width: 400px;
+    line-height: 1.5;
+}
+/* This section is for the search container and its icons */
+#search-container{
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    width: 350px;
+}
+.test {
+    position: relative;
+    display: flex;
+    min-width: 100px;
+}
+.search-icon {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    width: 20px;
+}
+.clear-icon {
+    position: absolute;
+    top: 11px;
+    right: 8px;
+    width: 14px;
+    cursor: pointer;
+    /* visibility: hidden; */
+}
+.search-box {
+    border: 1px solid grey;
+    border-radius: 25px;
+    height: 30px;
+    width: 100%;
+    padding: 2px 23px 2px 40px;
+    outline: 0;
+    background-color: #f5f5f5;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.search-box:hover, 
+.search-box:focus {
+    border: 1.5px solid #009688;
+    background-color: white;
+}
+
+#current-song {
+    display: flex;
+    justify-content: flex-end;
+    width: 250px;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#album-cover {
+    height: 80px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+#song-name {
+    font-size: 1.2em;
+}
+
+#artist-name {
+    font-size: 1em;
+}
+
+.circle {
+    background-color: red;
+    width: 30em;
+    height: 30em;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    margin: 0em 0em -15em -15em;
+}
