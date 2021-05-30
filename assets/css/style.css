@@ -126,3 +126,11 @@ song description/project description1 */
     height: 380;
     opacity: 0%;
 }
+
+.spotifySong {
+    display: none;
+}
+
+#song-preview {
+    display: none;
+}

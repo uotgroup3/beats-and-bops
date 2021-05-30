@@ -3,44 +3,72 @@ var songName = document.querySelector('#song-name');
 var artistName = document.querySelector('#artist-name');
 var albumCover = document.querySelector('#album-cover');
 var playCircle = document.querySelector('.circle');
-var playBtn = document.querySelector('.play-button');
 
-//This function gets us an access token to use throughout other functions
-//IIFE immediately invoked js expression
+var playBtn = document.querySelector('.play-button');
+var spotifyIframe = document.querySelector('.spotifySong');
+var songPreview = document.querySelector('#song-preview');
+
+// // This function gets us an access token to use throughout other functions
+// // IIFE immediately invoked js expression
 // var apiController = (function() {
 //     var clientId = 'ef677111698447b4a02f98e0e528437b';
 //     var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec';
 //     var base64Code = clientId + clientSecret;
     
-//     var getToken = async () => {
-//         var result = await fetch('https://accounts.spotify.com/api/token',{
-//             type: 'POST',
-//             headers: {
-//                 'Authorization' : 'bearer ' + base64Code  
-//             }
-//         });
+//     // var getToken = async () => {
+//     //     var result = await fetch('https://accounts.spotify.com/api/token',{
+//     //         type: 'POST',
+//     //         headers: {
+//     //             'Authorization' : 'bearer ' + base64Code  
+//     //         }
+//     //     });
     
-//         var data = await result.json();
-//         return data.access_token;
-//     };
+//     //     var data = await result.json();
+//     //     return data.access_token;
+//     // };
 
-    // //private post request to get token from spotify
-    // var getToken = async () => {
-    //     var result = await fetch('https://accounts.spotify.com/api/token', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type' : 'application/x-www-form-urlencoded',
-    //             'Authorization' : 'Basic ' + btoa(clientId + ':' + clientSecret)
-    //         },
-    //         body: 'grant_type=client_credentials'
-    //     });
+//     // return {
+//     //     getToken() {
+//     //         console.log(getToken());
+//     //         return getToken();
+//     //     }
+//     // };
+    
 
-    //     var data = await result.json();
-    //     console.log(data);
-    //     return data.access_token;
-    // }
-// () causes function to launch immediately
+//     // //private post request to get token from spotify
+//     // var getToken = async () => {
+//     //     var result = await fetch('https://accounts.spotify.com/api/token', {
+//     //         method: 'POST',
+//     //         headers: {
+//     //             'Content-Type' : 'application/x-www-form-urlencoded',
+//     //             'Authorization' : 'Basic ' + base64Code
+//     //         },
+//     //         body: 'grant_type=client_credentials'
+//     //     });
+
+//     //     var data = await result.json();
+//     //     console.log(data);
+//     //     return data.access_token;
+//     // }
+
+//     // var test = getToken();
+//     // console.log(test);
+
+//     function getToken() {
+//         var apiUrl = 'https://accounts.spotify.com/api/token';
+
+//         fetch(apiUrl)
+//             .then(function(response) {
+//                 return response.json();
+//             })
+//             .then(function(data) {
+//                 console.log(data)
+//             })
+//     }
+
+// // () causes function to launch immediately
 // })();
+
 
 
 //search button clicked
@@ -48,8 +76,8 @@ $('.search-icon').click(function() {
     //get value of search box
     var searchInfo = $('.search-box').val();
     //accessToken will need to be created as this one expires see below apiController for potential solution
-    var accessToken = 'BQBGtyTg1SBiGfUphEP38z5dja2B4M4_aXpZCW47AgjlybuSAxwFcVNR9qvOaLKAmF3-JjCaIpvHbnb66YMUXqX4uLCk-txtCfaJlzo0p0A_8yPevIm5njZ3_6hpZ4boxaPHIqGJWkUcBqR7Fcw1ebMkr6g5HgGwg6E';
-    
+    var accessToken = 'BQBKTREElA6JI-IhOPC3lZNNd7_0C2ORG18tK7axYvIXbaYMX8LN_IqKgTz0LsIhgsjMCLCcLCfEb5AReTLJ6ngcSz0cLbiwDmLhmCouTPgoY8lZUeKppFgk7IjFb9hbXiaLTYBerIrBs7QSyvajB36rBvH-37wu0Ag'
+
     //Make spotify API call using track endpoint
     $.ajax({
         url: `https://api.spotify.com/v1/search?q=${searchInfo}&type=track`,
@@ -71,6 +99,7 @@ $('.search-icon').click(function() {
 //this function loads the song information at bottom right corner
 function loadSong(trackInfo) {
     // var searchInfo = $('.search-box').val();
+    
     //Album cover img
     albumCover.setAttribute('src', trackInfo.tracks.items[0].album.images[0].url)
     //Song name
@@ -83,20 +112,33 @@ function loadSong(trackInfo) {
         artistName.textContent = artist;
         console.log(artist);
 
+    //song id
+    var id = trackInfo.tracks.items[0].id;
+
     //when song is loaded, load play button on visualizer
     playBtn.style.display = 'block';
+
+    //spotify Player
+    spotifyIframe.style.display = 'block';
+    spotifyIframe.setAttribute('src', `https://open.spotify.com/embed/track/${id}`);
+
 
 };
 
 //when playbutton is clicked, go to playfunction
 $('.play-button').click(function() {
     playSong();
+    // searchInfo.textContent = '';
 })
 
 //playSong function
 function playSong() {
     console.log("NEVERRR");
     //this will need if/else for pausing and continuing song blah blah blah
+
+    // var iframe = document.createElement('iframe');
+    // iframe.className('spotifySong');
+    
 }
 
 
