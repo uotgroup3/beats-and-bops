@@ -3,91 +3,63 @@ var songName = document.querySelector('#song-name');
 var artistName = document.querySelector('#artist-name');
 var albumCover = document.querySelector('#album-cover');
 var playCircle = document.querySelector('.circle');
+// var searchEl = document.querySelector('.search-icon');
 
 var playBtn = document.querySelector('.play-button');
 var spotifyIframe = document.querySelector('.spotifySong');
 
-// //request token from spotify
-// var request = require('request'); //'request' library
-// var clientId = 'ef677111698447b4a02f98e0e528437b';
-// var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec';
-
-// var authOptions = {
-//     url: 'https://accounts.spotify.com/api/token',
-//     headers: {
-//         'Authorization': 'Basic ' + (new Buffer(clientId + ':' + clientSecret.toString('base64')))
-//     },
-//     form: {
-//         grant_type: 'client_credentials'
-//     },
-//     json:true
-// }
-
-// request.post(authOptions, function(error, response, body) {
-//     if (!error && response.statusCode === 200) {
-//         //use access token to access Spotify Web API
-//         var accessToken = body.access_token;
-//         var options = {
-//             url: 'https://api.spotify.com/v1/users/jmperezperez',
-//             headers: {
-//                 'Authorization' : 'Bearer ' + accessToken
-//             },
-//             json: true
-//         };
-//         request.get(options, function(error, response, body) {
-//             console.log(body);
-//         });
-//     }
-// });
 
 // This function gets us an access token to use throughout other functions
 // IIFE immediately invoked js expression
-// var apiController = (function() {
-//     var clientId = 'ef677111698447b4a02f98e0e528437b';
-//     var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec'; 
+var apiController = (function() {
+    var clientId = 'ef677111698447b4a02f98e0e528437b';
+    var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec'; 
+    var base64Encode = btoa(clientId + ':' + clientSecret);
+    console.log(base64Encode);
 
-//     //private post request to get token from spotify
-//     var getToken = async () => {
-//         var result = await fetch('https://accounts.spotify.com/api/token', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type' : 'application/x-www-form-urlencoded',
-//                 'Authorization' : 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64)'))
-//             },
-//             body: 'grant_type=client_credentials'
-//         });
+    //private post request to get token from spotify
+    var getToken = async () => {
+        var result = await fetch('https://accounts.spotify.com/api/token', {
+            method: 'POST',
+            headers: {
+                'Content-Type' : 'application/x-www-form-urlencoded',
+                'Authorization' : 'Basic ' + base64Encode
+            },
+            body: 'grant_type=client_credentials'
+        });
 
-//         var data = await result.json();
-//         console.log(data);
-//         return data.access_token;
-//     }
+        var data = await result.json();
+        console.log(data);
+        return data.access_token;
+    }
 
-//     var test = getToken();
-//     console.log(test);
+    var test = getToken();
+    console.log(test);
 
-//     function getToken() {
-//         var apiUrl = 'https://accounts.spotify.com/api/token';
+    function getToken() {
+        var apiUrl = 'https://accounts.spotify.com/api/token';
 
-//         fetch(apiUrl)
-//             .then(function(response) {
-//                 return response.json();
-//             })
-//             .then(function(data) {
-//                 console.log(data)
-//             })
-//     }
-
-// // () causes function to launch immediately
-// })();
-
+        fetch(apiUrl)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
+                return(data);
+            })
+    }
+// () causes function to launch immediately
+})();
 
 
 //search button clicked
-$('.search-icon').click(function() {
+$('.search-icon').click(function () {
+    console.log('search clicked');
     //get value of search box
     var searchInfo = $('.search-box').val();
     //accessToken will need to be created as this one expires see below apiController for potential solution
-    var accessToken = 'BQBKTREElA6JI-IhOPC3lZNNd7_0C2ORG18tK7axYvIXbaYMX8LN_IqKgTz0LsIhgsjMCLCcLCfEb5AReTLJ6ngcSz0cLbiwDmLhmCouTPgoY8lZUeKppFgk7IjFb9hbXiaLTYBerIrBs7QSyvajB36rBvH-37wu0Ag'
+    var accessToken = data.access_token;
+    console.log(accessToken);
 
     //Make spotify API call using track endpoint
     $.ajax({
