@@ -6,53 +6,64 @@ var playCircle = document.querySelector('.circle');
 
 var playBtn = document.querySelector('.play-button');
 var spotifyIframe = document.querySelector('.spotifySong');
-var songPreview = document.querySelector('#song-preview');
 
-// // This function gets us an access token to use throughout other functions
-// // IIFE immediately invoked js expression
+// //request token from spotify
+// var request = require('request'); //'request' library
+// var clientId = 'ef677111698447b4a02f98e0e528437b';
+// var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec';
+
+// var authOptions = {
+//     url: 'https://accounts.spotify.com/api/token',
+//     headers: {
+//         'Authorization': 'Basic ' + (new Buffer(clientId + ':' + clientSecret.toString('base64')))
+//     },
+//     form: {
+//         grant_type: 'client_credentials'
+//     },
+//     json:true
+// }
+
+// request.post(authOptions, function(error, response, body) {
+//     if (!error && response.statusCode === 200) {
+//         //use access token to access Spotify Web API
+//         var accessToken = body.access_token;
+//         var options = {
+//             url: 'https://api.spotify.com/v1/users/jmperezperez',
+//             headers: {
+//                 'Authorization' : 'Bearer ' + accessToken
+//             },
+//             json: true
+//         };
+//         request.get(options, function(error, response, body) {
+//             console.log(body);
+//         });
+//     }
+// });
+
+// This function gets us an access token to use throughout other functions
+// IIFE immediately invoked js expression
 // var apiController = (function() {
 //     var clientId = 'ef677111698447b4a02f98e0e528437b';
-//     var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec';
-//     var base64Code = clientId + clientSecret;
-    
-//     // var getToken = async () => {
-//     //     var result = await fetch('https://accounts.spotify.com/api/token',{
-//     //         type: 'POST',
-//     //         headers: {
-//     //             'Authorization' : 'bearer ' + base64Code  
-//     //         }
-//     //     });
-    
-//     //     var data = await result.json();
-//     //     return data.access_token;
-//     // };
+//     var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec'; 
 
-//     // return {
-//     //     getToken() {
-//     //         console.log(getToken());
-//     //         return getToken();
-//     //     }
-//     // };
-    
+//     //private post request to get token from spotify
+//     var getToken = async () => {
+//         var result = await fetch('https://accounts.spotify.com/api/token', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type' : 'application/x-www-form-urlencoded',
+//                 'Authorization' : 'Basic ' + (new Buffer.from(clientId + ':' + clientSecret).toString('base64)'))
+//             },
+//             body: 'grant_type=client_credentials'
+//         });
 
-//     // //private post request to get token from spotify
-//     // var getToken = async () => {
-//     //     var result = await fetch('https://accounts.spotify.com/api/token', {
-//     //         method: 'POST',
-//     //         headers: {
-//     //             'Content-Type' : 'application/x-www-form-urlencoded',
-//     //             'Authorization' : 'Basic ' + base64Code
-//     //         },
-//     //         body: 'grant_type=client_credentials'
-//     //     });
+//         var data = await result.json();
+//         console.log(data);
+//         return data.access_token;
+//     }
 
-//     //     var data = await result.json();
-//     //     console.log(data);
-//     //     return data.access_token;
-//     // }
-
-//     // var test = getToken();
-//     // console.log(test);
+//     var test = getToken();
+//     console.log(test);
 
 //     function getToken() {
 //         var apiUrl = 'https://accounts.spotify.com/api/token';
