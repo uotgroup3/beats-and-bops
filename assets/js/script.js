@@ -3,22 +3,24 @@ var songName = document.querySelector('#song-name');
 var artistName = document.querySelector('#artist-name');
 var albumCover = document.querySelector('#album-cover');
 var playCircle = document.querySelector('.circle');
-// var searchEl = document.querySelector('.search-icon');
+var searchEl = document.querySelector('.search-icon');
 
 var playBtn = document.querySelector('.play-button');
 var spotifyIframe = document.querySelector('.spotifySong');
+var spotifyEl = document.querySelector('.spotify');
 
 
 // This function gets us an access token to use throughout other functions
 // IIFE immediately invoked js expression
-var apiController = (function() {
-    var clientId = 'ef677111698447b4a02f98e0e528437b';
-    var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec'; 
-    var base64Encode = btoa(clientId + ':' + clientSecret);
-    console.log(base64Encode);
-
+// var apiController = (function() {
+    
     //private post request to get token from spotify
     var getToken = async () => {
+        var clientId = 'ef677111698447b4a02f98e0e528437b';
+        var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec'; 
+        var base64Encode = btoa(clientId + ':' + clientSecret);
+        // console.log(base64Encode);
+        
         var result = await fetch('https://accounts.spotify.com/api/token', {
             method: 'POST',
             headers: {
@@ -29,27 +31,29 @@ var apiController = (function() {
         });
 
         var data = await result.json();
-        console.log(data);
+        console.log(data.access_token);
         return data.access_token;
     }
 
-    var test = getToken();
-    console.log(test);
 
-    function getToken() {
-        var apiUrl = 'https://accounts.spotify.com/api/token';
+    //this below might not need to be here as the above variable does the work, however getToken doesn't 'go' without this bottom function stuff
+    // var test = getToken();
+    // console.log(test);
 
-        fetch(apiUrl)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(data) {
-                console.log(data);
-                return(data);
-            })
-    }
+    // function getToken() {
+    //     var apiUrl = 'https://accounts.spotify.com/api/token';
+
+    //     fetch(apiUrl)
+    //         .then(function(response) {
+    //             return response.json();
+    //         })
+    //         .then(function(data) {
+    //             console.log(data);
+    //             return(data);
+    //         })
+    // }
 // () causes function to launch immediately
-})();
+// })();
 
 
 //search button clicked
@@ -58,8 +62,8 @@ $('.search-icon').click(function () {
     //get value of search box
     var searchInfo = $('.search-box').val();
     //accessToken will need to be created as this one expires see below apiController for potential solution
-    var accessToken = data.access_token;
-    console.log(accessToken);
+    var accessToken = 'BQCoOsAlAivtLQOYRIgWtm4iJ_fRuYWVx9OiWxjFeQlt2q5hwfsx3GmQuMrUoKWxlSiWIASwPxN0Tmrbq2_zTvsPSSWTvBRZTwgRCUDB6GDm9xMJoXPsyRfhfksimSN9bSA9RgGQzXZuIuDWWsHwQEO2gJ4SYnPWWzQ'//data.access_token;
+    // console.log(accessToken);
 
     //Make spotify API call using track endpoint
     $.ajax({
@@ -76,6 +80,9 @@ $('.search-icon').click(function () {
             loadSong(data);
         }
     })
+
+    ////////////////////
+    // ON CLICK OF SEARCH SONG, VISUALIZER SHOULD LOAD AUTOMATICALLY RATHER THAN WHEN PLAY SONG IS CLICKED
 })
 
 //trackInfo is data from search button click
@@ -98,14 +105,12 @@ function loadSong(trackInfo) {
     //song id
     var id = trackInfo.tracks.items[0].id;
 
-    //when song is loaded, load play button on visualizer
-    playBtn.style.display = 'block';
+    // //when song is loaded, load play button on visualizer
+    // playBtn.style.display = 'block';
 
     //spotify Player
     spotifyIframe.style.display = 'block';
     spotifyIframe.setAttribute('src', `https://open.spotify.com/embed/track/${id}`);
-
-
 };
 
 //when playbutton is clicked, go to playfunction
@@ -130,7 +135,7 @@ function playSong() {
 
 
 
-
+getToken();
 
 
 

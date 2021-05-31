@@ -112,14 +112,14 @@ song description/project description1 */
 
 
 /* Added from Music API */
-.play-button {
+/* .play-button {
     position: absolute;
     left: 30%;
     top: 30%;
     padding: 2rem;
     border-radius: 50%;
     display: none;
-}
+} */
 
 .iframe {
     width: 300;
