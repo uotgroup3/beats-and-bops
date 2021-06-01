@@ -37,6 +37,7 @@ $('.search-icon').click(function () {
     var searchInfo = $('.search-box').val();
     //accessToken will need to be created as this one expires see below apiController for potential solution
     // console.log(accessToken);
+
     //Make spotify API call using track endpoint
     $.ajax({
         url: `https://api.spotify.com/v1/search?q=${searchInfo}&type=track`,
@@ -55,40 +56,19 @@ $('.search-icon').click(function () {
     ////////////////////
     // ON CLICK OF SEARCH SONG, VISUALIZER SHOULD LOAD AUTOMATICALLY RATHER THAN WHEN PLAY SONG IS CLICKED
 })
+
 //trackInfo is data from search button click
 //this function loads the song information at bottom right corner
 function loadSong(trackInfo) {
-    // var searchInfo = $('.search-box').val();
-    //Album cover img
-    albumCover.setAttribute('src', trackInfo.tracks.items[0].album.images[0].url)
-    //Song name
-    var song = trackInfo.tracks.items[0].name;
-        songName.textContent = song;
-        console.log(song);
-    //Artist name
-    var artist = trackInfo.tracks.items[0].artists[0].name;
-        artistName.textContent = artist;
-        console.log(artist);
+    var searchInfo = $('.search-box').val();
     //song id
     var id = trackInfo.tracks.items[0].id;
     // //when song is loaded, load play button on visualizer
-    // playBtn.style.display = 'block';
     //spotify Player
     spotifyIframe.style.display = 'block';
     spotifyIframe.setAttribute('src', `https://open.spotify.com/embed/track/${id}`);
 };
-//when playbutton is clicked, go to playfunction
-$('.play-button').click(function() {
-    playSong();
-    // searchInfo.textContent = '';
-})
-//playSong function
-function playSong() {
-    console.log("NEVERRR");
-    //this will need if/else for pausing and continuing song blah blah blah
-    // var iframe = document.createElement('iframe');
-    // iframe.className('spotifySong');
-}
+
 
 getToken();
 

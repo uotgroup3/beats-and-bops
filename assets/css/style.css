@@ -1,4 +1,5 @@
 /* Beats and Bops Style Sheet */
+
 /* Accept suggestions for the font */
 html {
     font-family: 'Raleway', sans-serif;
@@ -103,23 +104,12 @@ song description/project description1 */
     width: 30em;
     height: 30em;
     border-radius: 50%;
-    /* changed to rel */
-    position: relative;
+    position: absolute;
     left: 50%;
     bottom: 50%;
     margin: 0em 0em -15em -15em;
 }
 
-
-/* Added from Music API */
-/* .play-button {
-    position: absolute;
-    left: 30%;
-    top: 30%;
-    padding: 2rem;
-    border-radius: 50%;
-    display: none;
-} */
 
 .iframe {
     width: 300;
