@@ -117,3 +117,14 @@ song description/project description1 */
     position: relative;
     top: 45%;
 }
+
+.iframe {
+    width: 300;
+    height: 380;
+    opacity: 0%;
+}
+
+.spotifySong {
+    display: none;
+}
+
