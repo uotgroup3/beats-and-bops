@@ -29,33 +29,36 @@ var getToken = async () => {
 }
 
 //search button clicked
-$('.search-icon').click(function () {
-    console.log("Randmon something " + data.access_token);
-    var access = data.access_token;
-    console.log(access);
-    //get value of search box
-    var searchInfo = $('.search-box').val();
-    //accessToken will need to be created as this one expires see below apiController for potential solution
-    // console.log(accessToken);
+document.addEventListener('keypress' , function(e) {
+    if (e.key === 'Enter'){
 
-    //Make spotify API call using track endpoint
-    $.ajax({
-        url: `https://api.spotify.com/v1/search?q=${searchInfo}&type=track`,
-        type: 'GET',
-        headers: {
-            'Authorization' : 'Bearer ' + access
-        },
-        //if call was successful, show data
-        success: function(data) {
-            //load songs from Spotify onto page
-            console.log(data);
-            //load songs from Spotify
-            loadSong(data);
-        }
-    })
-    ////////////////////
-    // ON CLICK OF SEARCH SONG, VISUALIZER SHOULD LOAD AUTOMATICALLY RATHER THAN WHEN PLAY SONG IS CLICKED
-})
+        console.log("Randmon something " + data.access_token);
+        var access = data.access_token;
+        console.log(access);
+        //get value of search box
+        var searchInfo = $('.search-box').val();
+        //accessToken will need to be created as this one expires see below apiController for potential solution
+        // console.log(accessToken);
+        
+        //Make spotify API call using track endpoint
+        $.ajax({
+            url: `https://api.spotify.com/v1/search?q=${searchInfo}&type=track`,
+            type: 'GET',
+            headers: {
+                'Authorization' : 'Bearer ' + access
+            },
+            //if call was successful, show data
+            success: function(data) {
+                //load songs from Spotify onto page
+                console.log(data);
+                //load songs from Spotify
+                loadSong(data);
+            }
+        })
+        ////////////////////
+        // ON CLICK OF SEARCH SONG, VISUALIZER SHOULD LOAD AUTOMATICALLY RATHER THAN WHEN PLAY SONG IS CLICKED
+    }
+});
 
 //trackInfo is data from search button click
 //this function loads the song information at bottom right corner
