@@ -1,4 +1,3 @@
-// Beats and Bops Functionality
 //variables
 var songName = document.querySelector('#song-name');
 var artistName = document.querySelector('#artist-name');
@@ -69,5 +68,6 @@ function loadSong(trackInfo) {
     spotifyIframe.style.display = 'block';
     spotifyIframe.setAttribute('src', `https://open.spotify.com/embed/track/${id}`);
 };
+
 
 getToken();
