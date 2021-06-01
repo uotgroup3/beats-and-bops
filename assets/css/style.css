@@ -8,6 +8,7 @@ html {
 /* The content will cover the whole page (10vh for the margins) */
 body {
     height: 90vh;
+    font-size: calc(12px + 0.5vh);
 }
 
 .wrapper {
@@ -99,15 +100,22 @@ song description/project description1 */
     font-size: 1em;
 }
 
+/* this is a placeholder. Remove later */
 .circle {
     background-color: red;
-    width: 30em;
-    height: 30em;
+    width: 30vw;
+    height: 30vw;
     border-radius: 50%;
     position: absolute;
     left: 50%;
     bottom: 50%;
     margin: 0em 0em -15em -15em;
+}
+
+.circle p {
+    text-align: center;
+    position: relative;
+    top: 45%;
 }
 
 .iframe {
@@ -119,3 +127,4 @@ song description/project description1 */
 .spotifySong {
     display: none;
 }
+
