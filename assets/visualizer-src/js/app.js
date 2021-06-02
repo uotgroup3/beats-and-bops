@@ -380,3 +380,24 @@ function touchEnded() {
 }
 
 console.log(searchInfo)
+
+// Fetch the CSS file for the Visualizer from a remote Github repository.
+fetch("https://api.github.com/repos/prayash/nucleactor/contents/src/css/style.css")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    var downloadLink = data.download_url;
+    var linkArray = downloadLink.split("/");
+    var newLink = 'https://gitcdn.link/repo'
+    for (i=3; i < linkArray.length; i++){
+        newLink = newLink.concat('/', linkArray[i]);
+    }
+    // Provide a link to a new css file from the Visualizer's github repo.
+    console.log('Please update your style sheet from here:', newLink);
+    
+    // Create a new <link> in the document.
+    var linkEl = document.createElement("link");
+    linkEl.rel = "stylesheet";
+    linkEl.href = newLink;
+    document.querySelector('head').appendChild(linkEl)    
+  }); 
