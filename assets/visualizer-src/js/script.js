@@ -69,7 +69,7 @@ function loadSong(trackInfo) {
     // //when song is loaded, load play button on visualizer
     //spotify Player
     spotifyIframe.style.display = 'block';
-    spotifyIframe.setAttribute('src', `https://open.spotify.com/embed/track/${id}`);    
+    spotifyIframe.setAttribute('src', `https://open.spotify.com/embed/track/${id}`);
 };
 
 // function visualizer(url){

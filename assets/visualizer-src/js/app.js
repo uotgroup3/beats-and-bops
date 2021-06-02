@@ -379,4 +379,4 @@ function touchEnded() {
   }
 }
 
-console.log(searchInfo)
+// console.log(searchInfo)

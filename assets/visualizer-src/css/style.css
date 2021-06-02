@@ -1,60 +1,129 @@
-button {
-  border: none;
-  color: white;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.5em;
+/* Beats and Bops Style Sheet */
+
+/* Accept suggestions for the font */
+html {
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(58,58,58)
+}
+/* The content will cover the whole page (10vh for the margins) */
+body {
+  height: 90vh;
+  font-size: calc(12px + 0.5vh);
 }
 
-input {
-  width: 250px;
-  color: white;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.5em;
-}
-
-input:focus, button:focus {
-  outline: none;
-}
-
-a {
-  color: white;
-}
-
-#loading {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-}
-
-#hud {
-  width: 325px;
-  font-family: Helvetica;
-  font-weight: 300;
-  font-size: 13px;
-  transition: opacity 0.5s linear;
-}
-
-.nowPlaying {
-  position: fixed;
-  left: 10px;
-  bottom: 0px;
-  color: white;
-}
-
-.blurb {
+.wrapper {
+  width: 90%;
+  margin: 5vh;
+  height: 90vh;
   position: relative;
-  background: rgba(0, 0, 0, 0);
+}
+p,h1,h2 {
   color: white;
 }
-
-.hide {
-  opacity: 0;
+/* Here we give format to the info container which includes the logo,
+song description/project description1 */
+#info {
+  display: inline-block;
+}
+#logo {
+  width: 200px;
+}
+#song-description {
+  width: 400px;
+  line-height: 1.5;
+}
+/* This section is for the search container and its icons */
+#search-container{
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  width: 350px;
+}
+.test {
+  position: relative;
+  display: flex;
+  min-width: 100px;
+}
+.search-icon {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  width: 20px;
+}
+.clear-icon {
+  position: absolute;
+  top: 11px;
+  right: 8px;
+  width: 14px;
+  cursor: pointer;
+  /* visibility: hidden; */
+}
+.search-box {
+  border: 1px solid grey;
+  border-radius: 25px;
+  height: 30px;
+  width: 100%;
+  padding: 2px 23px 2px 40px;
+  outline: 0;
+  background-color: #f5f5f5;
+  font-size: 1em;
+  font-weight: bold;
 }
 
-.show {
-  opacity: 1;
+.search-box:hover, 
+.search-box:focus {
+  border: 1.5px solid #009688;
+  background-color: white;
+}
+
+#current-song {
+  display: flex;
+  justify-content: flex-end;
+  width: 250px;
+  margin: 0px 0px 0px 0px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#album-cover {
+  height: 80px;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+#song-name {
+  font-size: 1.2em;
+}
+
+#artist-name {
+  font-size: 1em;
+}
+
+/* this is a placeholder. Remove later */
+.circle {
+  background-color: red;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  margin: 0em 0em -15em -15em;
+}
+
+.circle p {
+  text-align: center;
+  position: relative;
+  top: 45%;
+}
+
+.iframe {
+  width: 300;
+  height: 380;
+  opacity: 0%;
+}
+
+.spotifySong {
+  display: none;
 }
