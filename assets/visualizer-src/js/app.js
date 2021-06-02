@@ -378,3 +378,5 @@ function touchEnded() {
     toggleControls();
   }
 }
+
+console.log(searchInfo)
