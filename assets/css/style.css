@@ -80,8 +80,45 @@ main {
     left: 30%;
 }
 
-iframe {
+.graphics {
     overflow: hidden;
     width: 60vh;
     height: 60vh;
+}
+
+/* media */
+@media screen and (max-width: 1025px) {
+    /* #song-description {
+        width: 200px;
+    } */
+}
+
+@media screen and (max-width: 781px) {
+    .content {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        margin: 0;
+    }
+
+    .info-container {
+        margin: auto;
+        flex: 100%;
+        text-align: center;
+    }
+
+    #song-description {
+        margin: 0 auto;
+        padding: 0 20% 3%;
+        width: auto;
+    }
+
+    #search-container {
+        flex: 100%;
+    }
+
+    .visualizer {
+        width: 75%;
+        padding: 20px;
+    }
 }
