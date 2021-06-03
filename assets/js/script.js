@@ -7,7 +7,7 @@ var searchEl = document.querySelector('.search-icon');
 var playBtn = document.querySelector('.play-button');
 var spotifyIframe = document.querySelector('.spotifySong');
 var spotifyEl = document.querySelector('.spotify');
-var artistInfo = document.getElementById('#artist-info');
+var artistInfo = document.querySelector('.artist-info');
 
 // // This function gets us an access token to use throughout other functions
 // //private post request to get token from spotify
@@ -71,16 +71,39 @@ function loadSong(trackInfo) {
 
     //Artist information appears from Wiki API
     // artistInfo
+    getInfo(trackInfo);
 
 };
 
-function getWiki(trackInfo) {
-    var searchInfo = $('.search-box').val();
-    console.log(searchInfo);
-
-    var wikiKey = '';
-    var wikiURL = `https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchInfo}`;
-
+function getInfo(trackInfo) {
+    var lastFMKey = 'a85add3c1c4571a2781f7e1adf0fdd15';
+    var lastFMURL = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${trackInfo}&api_key=${lastFMKey}&format=json`;
+    
+    fetch(lastFMURL)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+        displayInfo(data, trackInfo);
+    }) 
 }
+
+function displayInfo(data, artistInfo) {
+    //empty song container
+    artistInfo.textContent = '';
+
+    //artist element
+    var songArtist = document.getElementById('artist');
+    songArtist.textContent = 'Artist: ' + data.results.trackmatches.track[0].artist;
+    console.log(songArtist);
+    
+    //other element
+    var songListeners = document.getElementById('listener-stats');
+    songListeners.textContent = 'Current Listeners: ' + data.results.trackmatches.track[0].listeners;
+    console.log(songListeners);
+}
+var searchInfo = $('.search-box').val();
+console.log(searchInfo);
 
 getToken();
