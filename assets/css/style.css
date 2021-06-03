@@ -142,6 +142,8 @@ song description/project description1 */
     .visualizer {
         width: 75%;
         padding: 20px;
+    } 
+}
 
 /* media */
 @media screen and (max-width: 1025px) {
@@ -194,3 +196,4 @@ song description/project description1 */
     #logo {
         height: 100px;
     }
+}
