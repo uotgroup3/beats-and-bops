@@ -60,14 +60,14 @@ song description/project description1 */
     width: 100%;
     padding: 2px 23px 2px 40px;
     outline: 0;
-    background-color: #f5f5f5;
-    font-size: 1em;
-    font-weight: bold;
-    transition: 0.3s;
+    background-color: #E9E9E9;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: 0.5s;
 }
 
 .search-box:hover {
-    background-color: #E9E9E9;
+    background-color: #f5f5f5;
 }
 
 .search-box:focus {
