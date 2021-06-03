@@ -79,9 +79,6 @@ function loadSong(trackInfo) {
 function getInfo(trackInfo) {
     const artistName = trackInfo.tracks.items[0].artists[0].name;
     console.log(artistName);
-    // get search name once again
-    // var artistInfo = $('.search-box').val();
-    // console.log(artistInfo);
 
     var apiURL = `https://theaudiodb.com/api/v1/json/1/search.php?s=${artistName}`;
 
@@ -96,9 +93,6 @@ function getInfo(trackInfo) {
 }
 
 function displayInfo(data, artistName) {
-    //empty song container
-    // artistInfo.textContent = '';
-
     //artist element
     var songArtist = document.querySelector('#artist');
     songArtist.textContent = 'Artist: ' + artistName;
