@@ -6,19 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beats and Bops</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/homepageStyle.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <main>
-
         <!-- placed a wrapper to help give format to the page -->
-        <div class="container" >
+        <header class="container">
             <!-- This section contains the logo and information about the song being played/what our project does -->
-            <section id="info" >
-                <img id="logo" src="/assets/images/icon.png" alt="Beats and Bops Logo">
-                <p id="song-description" > Welcome to Beats and Bops! Search for your favourite song or artist, hit enter, and click play to watch them come to life!</p>
+            <section id="content">
+                <a href="index.html"><img id="logo-small" src="../images/Logo.svg" alt="Beats and Bops Logo"></a>
             </section>
-
+    
             <!-- This section is for the search bar, Im sure it could be optimized -->
             <section id="search-container">
                 <div class="test">
@@ -26,13 +25,17 @@
                     <input class="search-box" placeholder="Search Artist or Song Title" type="text" >
                 </div>
             </section>
+        </header> 
 
-
+        <section class="content">
             <!-- Visualizer -->
+            <div class="info-container">
+            <p> Welcome to Beats and Bops! Search for your favourite song or artist, hit enter, and click play to watch them come to life!</p>
             <div class="visualizer">
                 <iframe class="graphics" src="https://soniaboller.github.io/audible-visuals/" width="400" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 <!-- <iframe class="graphics" src="http://mattdesl.github.io/codevember/21.html" width="400" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
             </div>
+        </div>
 
             <!-- This section is for the currently playing song and artist -->
             <section id="current-song">
@@ -45,6 +48,7 @@
                     <p id="artist-genre"></p>
                 </div>
             </section>
+        </section>
         </div>
     </main>
 
