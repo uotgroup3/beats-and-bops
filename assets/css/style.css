@@ -1,9 +1,9 @@
 html, body {
-    background-color: #EA35A7;
+    background-color: #E9E9E9;
 }
 
 p {
-    color: #f5f5f5;
+    color: #333;
 }
 
 #logo-small {
@@ -39,24 +39,24 @@ main {
 }
 
 .search-box {
-    border: 1px solid white;
+    border: 1px solid grey;
     border-radius: 25px;
     height: 30px;
     width: 100%;
     padding: 2px 23px 2px 40px;
     outline: 0;
-    background-color: white;
+    background-color: #E9E9E9;
     font-size: 0.9em;
     font-weight: 600;
     transition: 0.5s;
 }
 
 .search-box:hover {
-    background-color: white;
+    background-color: #f5f5f5;
 }
 
 .search-box:focus {
-    background-color: white;
+    background-color: #f5f5f5;
     border: 2px solid #48cae4;
 }
 
