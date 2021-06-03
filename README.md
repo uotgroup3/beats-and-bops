@@ -11,3 +11,7 @@
 **Logo**: Colorful Sound Waves Music App Logo.png![image](https://user-images.githubusercontent.com/84821822/119944834-c358a980-bf62-11eb-9f80-1b8c4d22b045.png)
 
 **Screenshots**:
+
+**APIs Used**: Spotify, Soundcloud, and Github
+
+**Third-Party Visualizer Source Repo**: https://github.com/prayash/nucleactor
