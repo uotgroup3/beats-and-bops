@@ -84,6 +84,7 @@ main {
     overflow: hidden;
     width: 60vh;
     height: 60vh;
+    border-radius: 50%;
 }
 
 /* media */
