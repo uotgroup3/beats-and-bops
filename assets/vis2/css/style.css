@@ -74,6 +74,21 @@ song description/project description1 */
     border: 2px solid #48cae4;
 }
 
+
+/* #album-cover {
+    height: 80px;
+    border-radius: 50px;
+    margin-right: 10px;
+} */
+
+/* #song-name {
+    font-size: 1.2em;
+}
+
+#artist-name {
+    font-size: 1em;
+} */
+
 /* Visualizer */
 .visualizer {
     flex: 100%;
@@ -105,8 +120,11 @@ song description/project description1 */
 
 
 /* media */
-/* @media screen and (max-width: 1025px) {
-} */
+@media screen and (max-width: 1025px) {
+    /* #song-description {
+        width: 200px;
+    } */
+}
 
 @media screen and (max-width: 781px) {
     .wrapper {
@@ -137,3 +155,4 @@ song description/project description1 */
         padding: 20px;
     }
 }
+

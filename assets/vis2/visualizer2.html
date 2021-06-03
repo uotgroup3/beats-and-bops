@@ -1,0 +1,57 @@
+<!-- Beats and Bops Webpage Structure -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beats and Bops</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <main>
+
+        <!-- placed a wrapper to help give format to the page -->
+        <div class="wrapper" >
+            <!-- This section contains the logo and information about the song being played/what our project does -->
+            <section id="info" >
+                <img id="logo" src="/assets/images/icon.png" alt="Beats and Bops Logo">
+                <p id="song-description" > Welcome to Beats and Bops! Search for your favourite song or artist, hit enter, and click play to watch them come to life!</p>
+            </section>
+
+            <!-- This section is for the search bar, Im sure it could be optimized -->
+            <section id="search-container">
+                <div class="test">
+                    <img class="search-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzAwMDAwMCIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+                    <input class="search-box" placeholder="Search Artist or Song Title" type="text" >
+                </div>
+            </section>
+
+
+            <!-- Visualizer -->
+            <div class="visualizer">
+                <iframe class="graphics" src="https://soniaboller.github.io/audible-visuals/" width="400" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                <!-- <iframe class="graphics" src="http://mattdesl.github.io/codevember/21.html" width="400" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+            </div>
+
+            <!-- This section is for the currently playing song and artist -->
+            <section id="current-song">
+                <div class="spotify">
+                    <iframe class="spotifySong" src="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                </div>
+                <div class="artist-info">
+                    <h2 id="artist"></h2>
+                    <p id="artist-born"></p>
+                    <p id="artist-genre"></p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Our JS file -->
+    <script src="./js/script.js"></script>
+
+</body>
+</html>

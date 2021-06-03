@@ -1,0 +1,53 @@
+/* Beats and Bops Style Sheet */
+
+/* Accept suggestions for the font */
+html {
+    font-family: 'Raleway', sans-serif;
+    background-color: #f5f5f5;
+}
+/* The content will cover the whole page (10vh for the margins) */
+body {
+    height: 90vh;
+    font-size: calc(12px + 0.5vh);
+}
+
+.wrapper {
+    width: 90%;
+    margin: 5vh;
+    height: 90vh;
+}
+p,h1,h2 {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Here we give format to the info container which includes the logo,
+song description/project description1 */
+#info {
+    display: inline-block;
+    text-align: center;
+}
+#logo {
+    width: 50%;
+}
+#song-description {
+    width: 400px;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 3%;
+}
+
+/* Link Styles */
+.visualizers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.vis {
+    padding: 2%;
+
+}
+.vis a {
+    text-decoration: none;
+    color: #333;
+}
