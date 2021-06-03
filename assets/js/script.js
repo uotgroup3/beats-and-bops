@@ -1,13 +1,16 @@
 //variables
-var songName = document.querySelector('#song-name');
-var artistName = document.querySelector('#artist-name');
+// var songName = document.querySelector('#song-name');
+// var artistName = document.querySelector('#artist-name');
 var albumCover = document.querySelector('#album-cover');
 var playCircle = document.querySelector('.circle');
 var searchEl = document.querySelector('.search-icon');
 var playBtn = document.querySelector('.play-button');
 var spotifyIframe = document.querySelector('.spotifySong');
 var spotifyEl = document.querySelector('.spotify');
+var searchInfo = document.querySelector('.search-box');
+//artist information from the audiodb
 var artistInfo = document.querySelector('.artist-info');
+
 
 // // This function gets us an access token to use throughout other functions
 // //private post request to get token from spotify
@@ -33,7 +36,7 @@ var getToken = async () => {
 document.addEventListener('keypress' , function(e) {
     if (e.key === 'Enter'){
 
-        console.log("Randmon something " + data.access_token);
+        // console.log("Randmon something " + data.access_token);
         var access = data.access_token;
         console.log(access);
         //get value of search box
@@ -75,17 +78,20 @@ function loadSong(trackInfo) {
 
 };
 
-function getInfo(trackInfo) {
-    var lastFMKey = 'a85add3c1c4571a2781f7e1adf0fdd15';
-    var lastFMURL = `http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${trackInfo}&api_key=${lastFMKey}&format=json`;
-    
-    fetch(lastFMURL)
+function getInfo(artistInfo) {
+    // get search name once again
+    var artistInfo = $('.search-box').val();
+    console.log(artistInfo);
+
+    var apiURL = `https://theaudiodb.com/api/v1/json/1/search.php?s=${artistInfo}`;
+
+    fetch(apiURL)
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
         console.log(data);
-        displayInfo(data, trackInfo);
+        displayInfo(data, artistInfo);
     }) 
 }
 
@@ -95,13 +101,18 @@ function displayInfo(data, artistInfo) {
 
     //artist element
     var songArtist = document.querySelector('#artist');
-    songArtist.textContent = 'Artist: ' + data.results.artistmatches.artist[0].name;
+    songArtist.textContent = 'Artist: ' + data.artists[0].strArtist;
     console.log(songArtist);
     
-    //listener element
-    var songListeners = document.querySelector('#listener-stats');
-    songListeners.textContent = 'Current Listeners: ' + data.results.artistmatches.artist[0].listeners;
-    console.log(songListeners);
+    //artist birth
+    var artistBirth = document.querySelector('#artist-born');
+    artistBirth.textContent = 'Birth Year: ' + data.artists[0].intBornYear;
+    console.log(artistBirth);
+    
+    //artist genre
+    var artistGenre = document.querySelector('#artist-genre');
+    artistGenre.textContent = 'Genre: ' + data.artists[0].strGenre;
+    console.log(artistGenre);
 }
 
 
