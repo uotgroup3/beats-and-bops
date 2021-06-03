@@ -77,7 +77,7 @@ function loadSong(trackInfo) {
 
 function getInfo(trackInfo) {
     var lastFMKey = 'a85add3c1c4571a2781f7e1adf0fdd15';
-    var lastFMURL = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${trackInfo}&api_key=${lastFMKey}&format=json`;
+    var lastFMURL = `http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${trackInfo}&api_key=${lastFMKey}&format=json`;
     
     fetch(lastFMURL)
     .then(function(response) {
@@ -94,16 +94,15 @@ function displayInfo(data, artistInfo) {
     artistInfo.textContent = '';
 
     //artist element
-    var songArtist = document.getElementById('artist');
-    songArtist.textContent = 'Artist: ' + data.results.trackmatches.track[0].artist;
+    var songArtist = document.querySelector('#artist');
+    songArtist.textContent = 'Artist: ' + data.results.artistmatches.artist[0].name;
     console.log(songArtist);
     
-    //other element
-    var songListeners = document.getElementById('listener-stats');
-    songListeners.textContent = 'Current Listeners: ' + data.results.trackmatches.track[0].listeners;
+    //listener element
+    var songListeners = document.querySelector('#listener-stats');
+    songListeners.textContent = 'Current Listeners: ' + data.results.artistmatches.artist[0].listeners;
     console.log(songListeners);
 }
-var searchInfo = $('.search-box').val();
-console.log(searchInfo);
+
 
 getToken();

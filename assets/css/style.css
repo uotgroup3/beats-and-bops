@@ -26,7 +26,6 @@ p,h1,h2 {
 song description/project description1 */
 #info {
     flex: 65%;
-    height: 15vh;
 }
 #logo {
     width: 300px;
@@ -102,7 +101,7 @@ song description/project description1 */
 
 /* Spotify */
 #current-song {
-    flex: 100%;
+    /* flex: 100%; */
     /* display: flex; */
     /* justify-content: flex-end;
     width: 250px;
@@ -118,11 +117,17 @@ song description/project description1 */
 }
 
 .spotify {
-    flex: 25%;
+    text-align: center;
 }
 
 .spotifySong {
     display: none;
+}
+
+#current-song {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
 }
 
 
@@ -136,41 +141,28 @@ song description/project description1 */
 @media screen and (max-width: 781px) {
     .wrapper {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
         width: auto;
         margin: 0;
     }
 
     #info {
-        display: flex;
-    }
-    
-    #info img {
-        padding-right: 10px;
+        margin: auto;
+        flex: 100%;
+        text-align: center;
     }
 
     #info p {
-        width: max-content;
-    }
-
-    #search-container {
-        position: inherit;
-        width: 100%;
+        margin: 0 auto;
         padding-bottom: 10px;
     }
 
-    .visualizer {
-        width: 40vw;
-        height: 40vw;
-        align-self: center;
-        margin: 10px 0px 0px 0px;
-        position: relative;
+    #search-container {
+        flex: 100%;
     }
-    #current-song {
-        justify-content: center;
-        width: 100%;
-        padding-bottom: 20px;
-        position: initial;
-        margin-top: 20px;
+
+    .visualizer {
+        width: 75%;
+        padding: 20px;
     }
 }
