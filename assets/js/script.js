@@ -72,36 +72,36 @@ function loadSong(trackInfo) {
     spotifyIframe.style.display = 'block';
     spotifyIframe.setAttribute('src', `https://open.spotify.com/embed/track/${id}`);
 
-    //Artist information appears from Wiki API
-    // artistInfo
+    //Artist information appears from Audio API
     getInfo(trackInfo);
-
 };
 
-function getInfo(artistInfo) {
+function getInfo(trackInfo) {
+    const artistName = trackInfo.tracks.items[0].artists[0].name;
+    console.log(artistName);
     // get search name once again
-    var artistInfo = $('.search-box').val();
-    console.log(artistInfo);
+    // var artistInfo = $('.search-box').val();
+    // console.log(artistInfo);
 
-    var apiURL = `https://theaudiodb.com/api/v1/json/1/search.php?s=${artistInfo}`;
+    var apiURL = `https://theaudiodb.com/api/v1/json/1/search.php?s=${artistName}`;
 
     fetch(apiURL)
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        console.log(data);
-        displayInfo(data, artistInfo);
+        console.log(data, artistName);
+        displayInfo(data, artistName);
     }) 
 }
 
-function displayInfo(data, artistInfo) {
+function displayInfo(data, artistName) {
     //empty song container
-    artistInfo.textContent = '';
+    // artistInfo.textContent = '';
 
     //artist element
     var songArtist = document.querySelector('#artist');
-    songArtist.textContent = 'Artist: ' + data.artists[0].strArtist;
+    songArtist.textContent = 'Artist: ' + artistName;
     console.log(songArtist);
     
     //artist birth
