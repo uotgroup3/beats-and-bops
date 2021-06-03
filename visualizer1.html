@@ -6,31 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beats and Bops</title>
-    <link rel="stylesheet" href="./assets/css/homepageStyle.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <main>
-
         <!-- placed a wrapper to help give format to the page -->
         <div class="wrapper" >
+
             <!-- This section contains the logo and information about the song being played/what our project does -->
             <section id="info" >
-                <img id="logo" src="./assets/images/icon.png" alt="Beats and Bops Logo">
-                <p id="song-description" > Welcome to Beats and Bops! Choose which visualizer you'd like to try and and enjoy!</p>
+                <img id="logo" src="/assets/images/icon.png" alt="Beats and Bops Logo">
+                <p id="song-description" > Welcome to Beats and Bops! Using the search bar on the right, you can stream your favourite main-stream music from Spotify! Alternatively, using the url search bar in the visualizer below, you can visualize your favorite indie music from Soundcloud!</p>
             </section>
-    
-            <!-- Visualizer Section -->
-            <div class="visualizers">
-                <!-- Visualizer One -->
-                <div class="vis">
-                    <a href="./visualizer1.html">Version One</a>
-                </div>
-                <!-- Visualizer Two -->
-                <div class="vis">
-                    <a href="./assets/vis2/visualizer2.html">Version Two</a>
-                </div>
 
-            </div>
             <!-- This section is for the search bar, Im sure it could be optimized -->
             <section id="search-container">
                 <div class="test">
@@ -38,31 +26,33 @@
                     <input class="search-box" placeholder="Search Artist or Song Title" type="text" >
                 </div>
             </section>
-            <!-- This section contains the logo and information about the song being played/what our project does -->
-            <section id="info" >
-                <img id="logo" src="./assets/images/icon.png" alt="Beats and Bops Logo">
-                <p id="song-description"> 
-                    A music app that displays a fun visualizer when the user searches and plays their favourite track from Spotify. It will bewitch the mind, ensnare the senses, and reignite the lost art of music visualization.
-                </p>
-
-                <p id="song-description"> 
-                    To start......... (add Jaspreet's text here)
-                </p>
-
-            </section>
             
+            <!-- I just placed this as a placeholder for the equilizer -->
+            <div class="visualizer">
+                <iframe class="graphics" src="./assets/visualizer-src/vis1.html" width="600" height="600" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            </div>
+
+
             <!-- This section is for the currently playing song and artist -->
             <section id="current-song">
                 <div class="spotify">
                     <iframe class="spotifySong" src="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>
+                <div class="artist-info">
+                    <h2 id="artist"></h2>
+                    <p id="artist-born"></p>
+                    <p id="artist-genre"></p>
+                </div>
             </section>
-        </div>
-    </main>
+            
+        </div> 
+    </div>
+</main>
 
-    <!-- jQuery -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- Our JS file -->
-    <!-- <script src=""></script> -->
+    <script src="./assets/visualizer-src/js/script.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
 </body>
 </html>

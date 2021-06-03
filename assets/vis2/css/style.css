@@ -31,10 +31,8 @@ song description/project description1 */
 #logo {
     width: calc(100px + 10vw);
 }
-
 #song-description {
     width: calc(100px + 10vw);
-    width: 350px;
     line-height: 1.5;
 }
 
@@ -76,6 +74,21 @@ song description/project description1 */
     border: 2px solid #48cae4;
 }
 
+
+/* #album-cover {
+    height: 80px;
+    border-radius: 50px;
+    margin-right: 10px;
+} */
+
+/* #song-name {
+    font-size: 1.2em;
+}
+
+#artist-name {
+    font-size: 1em;
+} */
+
 /* Visualizer */
 .visualizer {
     flex: 100%;
@@ -105,15 +118,13 @@ song description/project description1 */
     padding-top: 20px;
 }
 
-.iframe {
-    width: 300;
-    height: 380;
-    opacity: 0%;
-}
 
 /* media */
-/* @media screen and (max-width: 1025px) {
-} */
+@media screen and (max-width: 1025px) {
+    /* #song-description {
+        width: 200px;
+    } */
+}
 
 @media screen and (max-width: 781px) {
     .wrapper {
@@ -142,55 +153,6 @@ song description/project description1 */
     .visualizer {
         width: 75%;
         padding: 20px;
-
-/* media */
-@media screen and (max-width: 1025px) {
-    #song-description {
-        width: 200px;
     }
 }
 
-@media screen and (max-width: 781px) {
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        width: auto;
-        margin: 0;
-    }
-
-    #info {
-        display: flex;
-    }
-    
-    #info img {
-        padding-right: 10px;
-    }
-
-    #info p {
-        width: max-content;
-    }
-
-    #search-container {
-        position: inherit;
-        width: 100%;
-        padding-bottom: 10px;
-    }
-
-    .circle {
-        width: 40vw;
-        height: 40vw;
-        align-self: center;
-        margin: 10px 0px 0px 0px;
-        position: initial;
-    }
-    #current-song {
-        justify-content: center;
-        width: 100%;
-        padding-bottom: 20px;
-        position: initial;
-        margin-top: 20px;
-    }
-
-    #logo {
-        height: 100px;
-    }
