@@ -8,49 +8,88 @@ html {
 /* The content will cover the whole page (10vh for the margins) */
 body {
     height: 90vh;
-    font-size: calc(12px + 0.5vh);
+    font-size: calc(15px + 0.5vh);
 }
 
-.wrapper {
-    width: 90%;
-    margin: 5vh;
-    height: 90vh;
-}
 p,h1,h2 {
     color: #333;
     font-weight: 500;
 }
 
-/* Here we give format to the info container which includes the logo,
-song description/project description1 */
+h2 {
+    font-size: 1em;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10vh;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.logo {
+    width: 50%;
+}
+
 #info {
-    display: inline-block;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.logo-container {
-    width: 10em;
+#info h2 {
+    margin: -5vh 30% 0 0;
 }
 
-
-#song-description {
-    width: 400px;
+#info h2, #info p {
+    width: 30%;
     line-height: 1.5;
-    margin: 0 auto;
-    padding: 3%;
+    margin-left: 30%;
 }
 
 /* Link Styles */
 .visualizers {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: row;
+    margin-left: 30%;
 }
-.vis {
-    padding: 2%;
 
-}
-.vis a {
-    text-decoration: none;
+.visualizers > div:not(:first-child) {
+    margin-left: 50px;
+  }
+
+
+.link {
+    cursor: pointer;
     color: #333;
+    display: block;
+    text-decoration: none;
+    position: relative;
+    width: fit-content;
+    border-bottom: 4px solid #FFC561;
+    padding-bottom: 5px;
+    font-size: 1em;
+}
+
+.link:hover {
+    color: #333;
+}
+
+.link:after {
+    content: "";
+    background: #FFC561;
+	mix-blend-mode: normal;
+    width: calc(100% + 20px);
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    left: -10px;
+    z-index: -1;
+	transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.link:hover::after {
+    height: calc(100% + 8px);
 }
