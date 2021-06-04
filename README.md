@@ -6,12 +6,14 @@
 
 **Created By**: Lisa Le, Shannon Nell, Harmony Hood, Said Hadad, and Jaspreet Khela
 
-**Description**: A music visualizer that syncs with music that is requested by the user and streamed from a server that contains the music (i.e. Spotify).
+**Description**: A music visualizer that syncs with music that is requested by the user and streamed from a server that contains the music (i.e. Soundcloud). There is also a spotify search bar for streaming audio.
 
-**Logo**: Colorful Sound Waves Music App Logo.png![image](https://user-images.githubusercontent.com/84821822/119944834-c358a980-bf62-11eb-9f80-1b8c4d22b045.png)
+**Logo**: beats-and-bops-logo.png![image](https://user-images.githubusercontent.com/80941606/120854037-91d77380-c54a-11eb-880f-a773e8cb84cf.png)
 
 **Screenshots**:
 
 **APIs Used**: Spotify, Soundcloud, and Github
 
-**Third-Party Visualizer Source Repo**: https://github.com/prayash/nucleactor
+**Version 1 Third-Party Visualizer Source Repo**: https://github.com/prayash/nucleactor
+
+**Tutorial for Version 2 Visualizer**: https://www.youtube.com/watch?v=LJNiG8edBVY

@@ -22,6 +22,7 @@ header {
     display: flex;
     min-width: 100px;
 }
+
 .search-icon {
     position: absolute;
     top: 8px;
@@ -84,6 +85,12 @@ header {
     border-radius: 50%;
 }
 
+.soundcloud-graphics {
+    overflow: hidden;
+    width: 60vh;
+    height: 60vh;   
+}
+
 .spotify-container {
     width: 100%;
     display: flex;
@@ -130,10 +137,9 @@ header {
 
     .spotify-container {
         justify-content: center;
-    }
-
-    
+    }   
 }
+
 @media screen and (max-width: 770px) {
     .sphere-graphics {
         width: 350px;
