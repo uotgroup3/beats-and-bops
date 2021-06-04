@@ -63,11 +63,11 @@ header {
 .info-container{
     width: 30%;
     line-height: 1.5em;
-    margin: 0 2vh 0 0;
 }
 
 .visualizer {
-    width: 60%;
+    width: 68%;
+    text-align: center;
 }
 
 .soundcloud-graphics {
@@ -75,21 +75,18 @@ header {
     width: 60vw;
     height: 60vh;
     max-width: 587px;
-    /* min-height: 436px; */
 }
 .sphere-graphics {
     overflow: hidden;
-    width: 60vw;
-    height: 60vh;
+    width: 500px;
+    height: 500px;
     max-width: 587px;
     border-radius: 50%;
-
 }
 
 .spotify-container {
     width: 100%;
     display: flex;
-    justify-content: flex-end;
     padding: 2vh 0 4vh 0;
 }
 
@@ -101,8 +98,7 @@ header {
 }
 
 /* media */
-
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 1000px) {
     #logo-container {
         text-align: center;
         width: 100%;
@@ -134,5 +130,13 @@ header {
 
     .spotify-container {
         justify-content: center;
+    }
+
+    
+}
+@media screen and (max-width: 770px) {
+    .sphere-graphics {
+        width: 350px;
+        height: 350px;
     }
 }
