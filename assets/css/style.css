@@ -68,7 +68,6 @@ header {
 
 .visualizer {
     width: 68%;
-    text-align: center;
 }
 
 .soundcloud-graphics {
@@ -105,6 +104,12 @@ header {
 }
 
 /* media */
+@media screen and (max-width: 1200px) {
+    .visualizer {
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     #logo-container {
         text-align: center;
@@ -137,7 +142,12 @@ header {
 
     .spotify-container {
         justify-content: center;
-    }   
+    }  
+
+    #content {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 770px) {
