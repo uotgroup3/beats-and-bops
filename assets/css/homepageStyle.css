@@ -9,8 +9,8 @@ body {
     height: 90vh;
     font-size: calc(15px + 0.5vh);
     padding: 5vh 5% 0 5%;
-    background: linear-gradient(-45deg, #EF476F, #FF6B48, #FFC561, #7BD5E1);
-    animation: gradient 20s ease infinite;
+    background: linear-gradient(-45deg, #7BD5E1, #FF6B48, #FFC561, #EF476F);
+    animation: gradient 15s ease infinite;
     background-size: 400% 400%;
 }
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beats and Bops</title>
+    <link rel="stylesheet" href="./assets/css/homepageStyle.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/v3.css">
+</head>
+
+<body>
+    <header>
+        <!-- This section contains the logo and information about the song being played/what our project does -->
+        <section id="logo-container">
+            <a href="index.html"><img id="logo-small" src="./assets/images/Logo.svg" alt="Beats and Bops Logo"></a>
+        </section>
+    </header> 
+
+    <section class="content">
+        <div class="info-container">
+            <p>Info about visualizer here</p>
+
+            <input type="file" id="upload"/>
+        </div>
+    </section>
+
+    <canvas id="visualizer" height="255"></canvas>
+    <audio id="audio" controls>
+        <source src="" id="src"/>
+    </audio>
+
+    
+    <script src="./assets/visualizer-src/js/script.js"></script> <!-- Our JS file -->
+    <script src="./assets/js/v3.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script><!-- jQuery -->
+
+</body>
+</html>
