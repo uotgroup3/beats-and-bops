@@ -75,6 +75,13 @@ header {
     height: 60vh;
     max-width: 587px;
     /* min-height: 436px; */
+}
+.sphere-graphics {
+    overflow: hidden;
+    width: 60vw;
+    height: 60vh;
+    max-width: 587px;
+    border-radius: 50%;
 
 }
 
