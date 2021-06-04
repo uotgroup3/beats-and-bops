@@ -63,10 +63,11 @@ header {
 .info-container{
     width: 30%;
     line-height: 1.5em;
+    margin: 0 2vh 0 0;
 }
 
 .visualizer {
-    width: 70%;
+    width: 60%;
 }
 
 .soundcloud-graphics {

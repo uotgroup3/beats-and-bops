@@ -32,6 +32,18 @@
                 <p>Using the search bar on the right, you can stream your favourite main-stream music from Spotify!</p> 
                 <p><span style="font-weight: 600">Alternatively</span>, using the url search bar in the visualizer, you can visualize your favorite indie music from Soundcloud!</p>
                 </p>
+                <div class="spotify-container">
+                    <section id="current-song">
+                        <div class="spotify">
+                            <iframe class="spotifySong" src="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                        <div class="artist-info">
+                            <h2 id="artist"></h2>
+                            <p id="artist-born"></p>
+                            <p id="artist-genre"></p>
+                        </div>
+                    </section>
+                </div>
             </div>
 
             <div class="visualizer">
@@ -39,18 +51,6 @@
             </div>
             
             <!-- This section is for the currently playing song and artist -->
-            <div class="spotify-container">
-                <section id="current-song">
-                    <div class="spotify">
-                        <iframe class="spotifySong" src="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                    </div>
-                    <div class="artist-info">
-                        <h2 id="artist"></h2>
-                        <p id="artist-born"></p>
-                        <p id="artist-genre"></p>
-                    </div>
-                </section>
-            </div>
         </section>
 </main>
 
