@@ -3,12 +3,13 @@
 /* Accept suggestions for the font */
 html {
     font-family: 'Raleway', sans-serif;
-    background-color: #f5f5f5;
 }
 /* The content will cover the whole page (10vh for the margins) */
 body {
     height: 90vh;
     font-size: calc(12px + 0.5vh);
+    padding: 5vh 5% 0 5%;
+    background: #f5f5f5
 }
 
 .wrapper {
