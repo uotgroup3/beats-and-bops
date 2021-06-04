@@ -1,15 +1,31 @@
 /* Beats and Bops Style Sheet */
 
-/* Accept suggestions for the font */
 html {
     font-family: 'Raleway', sans-serif;
-    background-color: #f5f5f5;
 }
+
 /* The content will cover the whole page (10vh for the margins) */
 body {
     height: 90vh;
     font-size: calc(15px + 0.5vh);
+    padding: 5vh 5% 0 5%;
+    background: linear-gradient(-45deg, #EF476F, #FF6B48, #FFC561, #7BD5E1);
+    animation: gradient 20s ease infinite;
+    background-size: 400% 400%;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 p,h1,h2 {
     color: #333;
@@ -60,7 +76,7 @@ h2 {
 
 .visualizers > div:not(:first-child) {
     margin-left: 50px;
-  }
+}
 
 
 .link {
@@ -70,7 +86,7 @@ h2 {
     text-decoration: none;
     position: relative;
     width: fit-content;
-    border-bottom: 4px solid #FFC561;
+    border-bottom: 4px solid #7BD5E1;
     padding-bottom: 5px;
     font-size: 1em;
 }
@@ -81,7 +97,7 @@ h2 {
 
 .link:after {
     content: "";
-    background: #FFC561;
+    background: #7BD5E1;
 	mix-blend-mode: normal;
     width: calc(100% + 20px);
     height: 0;

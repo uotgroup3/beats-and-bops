@@ -1,36 +1,28 @@
-html, body {
-    background-color: #E9E9E9;
-}
-
-p {
-    color: #333;
+/* styling for the header, includes the logo and the searchbar */
+header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #logo-small {
     width: calc(50px + 20vh);
 }
 
-main {
-    padding: 5vh 5% 0 5%;
-}
-
-.container {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
+/* searchbar is going to be 50% of the vh and styling so the icons show inside the bar */
 #search-container{
-    position: absolute;
-    right: 10%;
-    width: 50vh;
+    width: 50vw;
+    max-width: 400px;
 }
+
 .test {
     position: relative;
     display: flex;
     min-width: 100px;
 }
+
 .search-icon {
     position: absolute;
     top: 8px;
@@ -60,30 +52,36 @@ main {
     border: 2px solid #48cae4;
 }
 
+
+/* styling for the main using acontainer to ease content styling */
+/* includes info container, sound-cloud visualizer and spotify api visualizer */
 .content {
+    padding-top: 5vh;
     display: flex;
-    width: 80%;
+    flex-wrap: wrap;
 }
 
-.info-container p {
+.info-container{
     width: 30%;
     line-height: 1.5em;
 }
 
-.bold {
-    font-weight: 600;
-}
-
 .visualizer {
-    position: absolute;
-    top: 20%;
-    left: 30%;
+    width: 68%;
+    text-align: center;
 }
 
-.graphics {
+.soundcloud-graphics {
     overflow: hidden;
-    width: 60vh;
+    width: 60vw;
     height: 60vh;
+    max-width: 587px;
+}
+.sphere-graphics {
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    max-width: 587px;
     border-radius: 50%;
 }
 
@@ -93,19 +91,30 @@ main {
     height: 60vh;   
 }
 
-/* media */
-@media screen and (max-width: 1025px) {
-    /* #song-description {
-        width: 200px;
-    } */
+.spotify-container {
+    width: 100%;
+    display: flex;
+    padding: 2vh 0 4vh 0;
 }
 
-@media screen and (max-width: 781px) {
-    .content {
-        display: flex;
-        justify-content: center;
-        width: auto;
-        margin: 0;
+#current-song {
+    border-style: solid;
+    border-color: green;
+    width: 320px;
+    height: 80px;
+}
+
+/* media */
+@media screen and (max-width: 1000px) {
+    #logo-container {
+        text-align: center;
+        width: 100%;
+    }
+
+    #search-container {
+        position: initial;
+        width: 100%;
+        max-width: unset;
     }
 
     .info-container {
@@ -120,12 +129,20 @@ main {
         width: auto;
     }
 
-    #search-container {
-        flex: 100%;
+    .visualizer {
+        width: 100%;
+        padding: 2vh;
+        text-align: center;
     }
 
-    .visualizer {
-        width: 75%;
-        padding: 20px;
+    .spotify-container {
+        justify-content: center;
+    }   
+}
+
+@media screen and (max-width: 770px) {
+    .sphere-graphics {
+        width: 350px;
+        height: 350px;
     }
 }
