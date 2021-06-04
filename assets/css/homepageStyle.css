@@ -86,7 +86,7 @@ h2 {
     text-decoration: none;
     position: relative;
     width: fit-content;
-    border-bottom: 4px solid #FFC561;
+    border-bottom: 4px solid #7BD5E1;
     padding-bottom: 5px;
     font-size: 1em;
 }
@@ -97,7 +97,7 @@ h2 {
 
 .link:after {
     content: "";
-    background: #FFC561;
+    background: #7BD5E1;
 	mix-blend-mode: normal;
     width: calc(100% + 20px);
     height: 0;
