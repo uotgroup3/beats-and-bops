@@ -43,30 +43,35 @@ var getToken = async () => {
 //search button clicked
 document.addEventListener('keypress' , function(e) {
     if (e.key === 'Enter'){
-
-        // console.log("Randmon something " + data.access_token);
-        var access = data.access_token;
-        console.log(access);
-        //get value of search box
         var searchInfo = $('.search-box').val();
-        //accessToken will need to be created as this one expires see below apiController for potential solution
-        // console.log(accessToken);
-        
-        //Make spotify API call using track endpoint
-        $.ajax({
-            url: `https://api.spotify.com/v1/search?q=${searchInfo}&type=track`,
-            type: 'GET',
-            headers: {
-                'Authorization' : 'Bearer ' + access
-            },
-            //if call was successful, show data
-            success: function(data) {
-                //load songs from Spotify onto page
-                console.log(data);
-                //load songs from Spotify
-                loadSong(data);
-            }
-        })        
+        if (searchInfo === "" || searchInfo === null){
+            window.alert("Invalid Song, please try again.")
+        }
+        else {
+
+            // console.log("Randmon something " + data.access_token);
+            var access = data.access_token;
+            console.log(access);
+            //get value of search box
+            //accessToken will need to be created as this one expires see below apiController for potential solution
+            // console.log(accessToken);
+            
+            //Make spotify API call using track endpoint
+            $.ajax({
+                url: `https://api.spotify.com/v1/search?q=${searchInfo}&type=track`,
+                type: 'GET',
+                headers: {
+                    'Authorization' : 'Bearer ' + access
+                },
+                //if call was successful, show data
+                success: function(data) {
+                    //load songs from Spotify onto page
+                    console.log(data);
+                    //load songs from Spotify
+                    loadSong(data);
+                }
+            })        
+        }
     }
 });
 
