@@ -10,14 +10,12 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <main>
-    <!-- placed a wrapper to help give format to the page -->
-    <header class="container">
+    <header>
         <!-- This section contains the logo and information about the song being played/what our project does -->
-        <section id="content">
+        <section id="logo-container">
             <a href="index.html"><img id="logo-small" src="./assets/images/Logo.svg" alt="Beats and Bops Logo"></a>
         </section>
-
+        
         <!-- This section is for the search bar, Im sure it could be optimized -->
         <section id="search-container">
             <div class="test">
@@ -26,37 +24,39 @@
             </div>
         </section>
     </header> 
-
-            <!-- I just placed this as a placeholder for the equilizer -->
+    
+    <main>
+        <!-- this encloses the info-container, visualizer and the spotify API -->
         <section class="content">
             <div class="info-container">
                 <p>Using the search bar on the right, you can stream your favourite main-stream music from Spotify!</p> 
-                <p><span class="bold">Alternatively</span>, using the url search bar in the visualizer, you can visualize your favorite indie music from Soundcloud!</p>
+                <p><span style="font-weight: 600">Alternatively</span>, using the url search bar in the visualizer, you can visualize your favorite indie music from Soundcloud!</p>
                 </p>
+                <div class="spotify-container">
+                    <section id="current-song">
+                        <div class="spotify">
+                            <iframe class="spotifySong" src="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        </div>
+                        <div class="artist-info">
+                            <h2 id="artist"></h2>
+                            <p id="artist-born"></p>
+                            <p id="artist-genre"></p>
+                        </div>
+                    </section>
+                </div>
             </div>
 
             <div class="visualizer">
                 <iframe class="soundcloud-graphics" src="./assets/visualizer-src/vis1.html" frameborder="0" allowtransparency="true" allow="encrypted-media" scrolling="no"></iframe>
             </div>
-        </section>
-
+            
             <!-- This section is for the currently playing song and artist -->
-            <section id="current-song">
-                <div class="spotify">
-                    <iframe class="spotifySong" src="" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                </div>
-                <div class="artist-info">
-                    <h2 id="artist"></h2>
-                    <p id="artist-born"></p>
-                    <p id="artist-genre"></p>
-                </div>
-            </section>
+        </section>
 </main>
 
     <!-- Our JS file -->
     <script src="./assets/visualizer-src/js/script.js"></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   
 </body>
 </html>
