@@ -12,7 +12,7 @@ var spotifyEl = document.querySelector('.spotify');
 // //private post request to get token from spotify
 var getToken = async () => {
     var clientId = 'ef677111698447b4a02f98e0e528437b';
-    var clientSecret = '0ad72dace42f4cf796c70cb87cec8fec'; 
+    var clientSecret = '6c7ee80f21e4421fa6b1ffd398fbde00'; 
     var base64Encode = btoa(clientId + ':' + clientSecret);
     // console.log(base64Encode);
     var result = await fetch('https://accounts.spotify.com/api/token', {
