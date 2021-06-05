@@ -55,6 +55,7 @@ h2 {
 #info {
     display: flex;
     flex-direction: column;
+    padding-top: 2vh;
 }
 
 #info h2 {
