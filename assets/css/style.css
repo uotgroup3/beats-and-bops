@@ -110,6 +110,7 @@ header {
     }
 }
 
+
 @media screen and (max-width: 1050px) {
     #logo-container {
         text-align: center;
@@ -148,7 +149,6 @@ header {
         width: 100%;
         text-align: center;
     }
-
 }
     .soundcloud-graphics {
         overflow: hidden;
