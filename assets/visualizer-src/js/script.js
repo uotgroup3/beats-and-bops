@@ -72,6 +72,4 @@ function loadSong(trackInfo) {
     spotifyIframe.setAttribute('src', `https://open.spotify.com/embed/track/${id}`);    
 };
 
-var cssLink = '';
-
 getToken();
