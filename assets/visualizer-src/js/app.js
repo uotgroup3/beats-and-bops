@@ -379,8 +379,7 @@ function touchEnded() {
   }
 }
 
-// ************************************************************************************
-// This makes a request to the Github API. This was written by Jaspreet.
+// console.log(searchInfo)
 
 // Fetch the CSS file for the Visualizer from a remote Github repository.
 fetch("https://api.github.com/repos/prayash/nucleactor/contents/src/css/style.css")
