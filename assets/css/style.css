@@ -161,4 +161,9 @@ header {
         width: 350px;
         height: 350px;
     }
+
+    body,
+    .visualizer {
+        padding: 0;
+    }
 }
