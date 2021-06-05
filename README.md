@@ -23,6 +23,6 @@ Screen Shot 2021-06-05 at 4.36.30 PM![image](https://user-images.githubuserconte
 
 **APIs Used**: Spotify, Audio DB, Github, and Soundcloud
 
-**Version 1 Third-Party Visualizer Source Repo**: https://github.com/prayash/nucleactor
+**Version One Third-Party Visualizer Source Repo**: https://github.com/prayash/nucleactor
 
-**Tutorial for Version 2 Visualizer**: https://www.youtube.com/watch?v=LJNiG8edBVY
+**Tutorial for Version Two Visualizer**: https://www.youtube.com/watch?v=LJNiG8edBVY
