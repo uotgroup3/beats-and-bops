@@ -9,6 +9,8 @@ header {
 
 #logo-small {
     width: calc(50px + 20vh);
+    /* min-width: 240px;
+    min-height: 100px; */
 }
 
 /* searchbar is going to be 50% of the vh and styling so the icons show inside the bar */
@@ -97,8 +99,6 @@ header {
 }
 
 #current-song {
-    border-style: solid;
-    border-color: green;
     width: 320px;
     height: 80px;
 }
@@ -110,7 +110,8 @@ header {
     }
 }
 
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 1050px) {
     #logo-container {
         text-align: center;
         width: 100%;
@@ -148,6 +149,11 @@ header {
         width: 100%;
         text-align: center;
     }
+}
+    .soundcloud-graphics {
+        overflow: hidden;
+        width: 100%;
+        /* height: 300px; */
 }
 
 @media screen and (max-width: 770px) {
