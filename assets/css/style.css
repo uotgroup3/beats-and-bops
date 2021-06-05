@@ -99,8 +99,6 @@ header {
 }
 
 #current-song {
-    border-style: solid;
-    border-color: green;
     width: 320px;
     height: 80px;
 }
