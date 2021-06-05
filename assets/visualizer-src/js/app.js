@@ -380,8 +380,10 @@ function touchEnded() {
 }
 
 console.log(searchInfo)
+// ************************************************************************************
+// The following code is for the Github API request. This was written by Jaspreet.
 
-// Fetch the CSS file for the Visualizer from a remote Github repository.
+// Fetch the css file for the Visualizer from a remote Github repository.
 fetch("https://api.github.com/repos/prayash/nucleactor/contents/src/css/style.css")
   .then(response => response.json())
   .then(data => {
@@ -392,7 +394,7 @@ fetch("https://api.github.com/repos/prayash/nucleactor/contents/src/css/style.cs
     for (i=3; i < linkArray.length; i++){
         newLink = newLink.concat('/', linkArray[i]);
     }
-    // Provide a link to a new css file from the Visualizer's github repo.
+    // Provide a link to a new css file from the Visualizer's github repo in the console.
     console.log('Please update your style sheet from here:', newLink);
     
     // Create a new <link> in the document.
