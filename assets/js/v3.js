@@ -20,6 +20,9 @@ window.onload = function() {
     src.connect(analyser);
     analyser.connect(context.destination);
 
+    //represent bar size to frequency domain data. Must be a power of 2
+    // between 2^5 and 2^15
+    // example: 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192. Defaults to 2048
     analyser.fftSize = 256;
 
     var bufferLength = analyser.frequencyBinCount;
@@ -44,11 +47,11 @@ window.onload = function() {
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
       for (var i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i];
+        barHeight = (dataArray[i] * 2.5); //adjust number to change height
         
-        var r = barHeight + (30 * (i/bufferLength));
-        var g = 250 * (i/bufferLength);
-        var b = 50;
+        var r = barHeight + (2 * (i/bufferLength));
+        var g = 100 * (i/bufferLength);
+        var b = 100;
 
         ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
         ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
