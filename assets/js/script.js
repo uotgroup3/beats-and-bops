@@ -45,7 +45,7 @@ document.addEventListener('keypress' , function(e) {
     if (e.key === 'Enter'){
         var searchInfo = $('.search-box').val();
         if (searchInfo === "" || searchInfo === null){
-            window.alert("Invalid Song, please try again.")
+            console.log("no input");
         }
         else {
 
