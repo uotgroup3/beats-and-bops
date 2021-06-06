@@ -40,7 +40,7 @@ window.onload = function() {
 
       analyser.getByteFrequencyData(dataArray);
 
-      ctx.fillStyle = "white";
+      ctx.fillStyle = "#FFC561";
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
       for (var i = 0; i < bufferLength; i++) {
