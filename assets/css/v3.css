@@ -1,0 +1,44 @@
+html,body {
+    overflow: hidden;
+}
+
+::-webkit-file-upload-button {
+    color: #333;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    font-family: 'Raleway', sans-serif;
+
+    background-color: white;
+    padding: 1vh 3vh;
+    border-radius: 20px;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+::-webkit-file-upload-button:hover {
+    background-color: transparent;
+}
+
+#audio {
+    position: absolute;
+    bottom: 2vh;
+    left: 0;
+    width: 100%;
+    padding: 0;
+}
+
+::-webkit-media-controls-enclosure {
+    border-radius: 0;
+    background-color: transparent;
+}
+
+#visualizer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -2;
+}
