@@ -1,3 +1,7 @@
+html,body {
+    overflow: hidden;
+}
+
 ::-webkit-file-upload-button {
     color: #333;
     font-weight: bold;
@@ -27,4 +31,14 @@
 ::-webkit-media-controls-enclosure {
     border-radius: 0;
     background-color: transparent;
+}
+
+#visualizer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -2;
 }
