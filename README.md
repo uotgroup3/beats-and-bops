@@ -10,7 +10,7 @@
 
 **Website**: https://uotgroup3.github.io/beats-and-bops/
 
-**Project Document**: https://drive.google.com/file/d/1uZCe1WtsQgjirJh8wE25fQACtlnkD7tQ/view?usp=sharing
+**Project Document**: https://docs.google.com/document/d/1H5HEuLqtift8yredVhPvZUYwSanIB65mDYJWmKhV4tk/edit?usp=sharing
 
 **Project Demo Presentation**: https://drive.google.com/file/d/1A5eWkc59k1XFI07MG49Ge0ENEPl6Jgb8/view?usp=sharing
 
